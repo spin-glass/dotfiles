@@ -69,3 +69,4 @@ export LINEAR_API_KEY="***REMOVED***"
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+eval "$(starship init zsh)"
