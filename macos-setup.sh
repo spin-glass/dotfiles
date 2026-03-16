@@ -41,7 +41,6 @@ defaults write com.apple.screencapture disable-shadow -bool true      # 影な�
 
 # ── その他 ──
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001         # ウィンドウアニメ最速
-defaults write com.apple.universalaccess reduceMotion -bool true      # モーション軽減
 
 # 反映
 killall Finder
