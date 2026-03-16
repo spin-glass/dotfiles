@@ -1,0 +1,46 @@
+# =============================================================================
+# Ghostty Configuration
+# ~/.config/ghostty/config
+# =============================================================================
+
+# -- Theme --------------------------------------------------------------------
+theme = Ayu Light
+
+# -- Font ---------------------------------------------------------------------
+# Ghostty ships with JetBrains Mono + built-in Nerd Fonts by default
+# font-family = JetBrains Mono
+font-size = 12
+
+# -- Window -------------------------------------------------------------------
+window-padding-x = 12
+window-padding-y = 12
+window-padding-balance = true
+window-save-state = always
+macos-titlebar-style = tabs
+
+# -- macOS specific -----------------------------------------------------------
+# Option key as Alt (required for terminal shortcuts like Alt+B, Alt+F)
+macos-option-as-alt = true
+
+# -- Input --------------------------------------------------------------------
+mouse-hide-while-typing = true
+
+# -- Claude Code compatibility ------------------------------------------------
+# Shift+Enter works natively in Ghostty, but if issues arise uncomment:
+# keybind = shift+enter=text:\n
+
+# -- Shell integration --------------------------------------------------------
+shell-integration-features = cursor,sudo,title
+
+# -- Clipboard ----------------------------------------------------------------
+copy-on-select = clipboard
+
+# -- Notifications ------------------------------------------------------------
+desktop-notifications = true
+
+confirm-close-surface = false
+
+# 新しいウィンドウ、タブ、分割画面で現在の作業ディレクトリを引き継ぐ
+window-inherit-working-directory = true
+tab-inherit-working-directory = true
+split-inherit-working-directory = true

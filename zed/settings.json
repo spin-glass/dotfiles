@@ -1,0 +1,52 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent_servers": {
+    "claude": {
+      "favorite_config_option_values": {
+        "mode": [
+          "acceptEdits"
+        ]
+      }
+    }
+  },
+  "which_key": {
+    "enabled": true,
+  },
+  "autosave": "on_focus_change",
+  "on_last_window_closed": "quit_app",
+  "when_closing_with_no_tabs": "close_window",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "vim_mode": true,
+  "terminal": {
+    "env": {
+      "Q_NEW_SESSION": "\"1\"",
+    },
+  },
+  "base_keymap": "VSCode",
+  "restore_on_file_reopen": true,
+  "icon_theme": {
+    "mode": "light",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "light",
+    "light": "Ayu Light",
+    "dark": "One Dark",
+  },
+}
