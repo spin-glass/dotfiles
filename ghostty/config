@@ -1,10 +1,11 @@
 # =============================================================================
 # Ghostty Configuration
-# ~/.config/ghostty/config
+# ~/.config/ghostty/config  (Ghostty 1.3+ / macOS)
 # =============================================================================
 
 # -- Theme --------------------------------------------------------------------
-theme = Ayu Light
+# macOS の外観モードに追従(ライト: Ayu Light / ダーク: Ayu)
+theme = light:Ayu Light,dark:Ayu
 
 # -- Font ---------------------------------------------------------------------
 # Ghostty ships with JetBrains Mono + built-in Nerd Fonts by default
@@ -15,7 +16,9 @@ font-size = 12
 window-padding-x = 12
 window-padding-y = 12
 window-padding-balance = true
+# 確認なしで閉じ、次回起動時にウィンドウ状態を復元する
 window-save-state = always
+confirm-close-surface = false
 macos-titlebar-style = tabs
 
 # -- macOS specific -----------------------------------------------------------
@@ -30,17 +33,15 @@ mouse-hide-while-typing = true
 # keybind = shift+enter=text:\n
 
 # -- Shell integration --------------------------------------------------------
-shell-integration-features = cursor,sudo,title
+# 未指定の機能はデフォルト値が使われる(cursor / title / path はデフォルト有効)。
+# デフォルト無効の sudo と SSH 統合(1.2.0+)のみ明示的に有効化する
+shell-integration-features = sudo,ssh-terminfo,ssh-env
 
 # -- Clipboard ----------------------------------------------------------------
+# 選択テキストをシステムクリップボードにもコピー(デフォルト true は選択クリップボードのみ)
 copy-on-select = clipboard
 
 # -- Notifications ------------------------------------------------------------
-desktop-notifications = true
-
-confirm-close-surface = false
-
-# 新しいウィンドウ、タブ、分割画面で現在の作業ディレクトリを引き継ぐ
-window-inherit-working-directory = true
-tab-inherit-working-directory = true
-split-inherit-working-directory = true
+# 非フォーカス時、5秒以上かかったコマンドの完了をデスクトップ通知する(1.3.0+)
+notify-on-command-finish = unfocused
+notify-on-command-finish-action = no-bell,notify
