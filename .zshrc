@@ -18,6 +18,9 @@ eval "$(/opt/homebrew/bin/mise activate zsh)"
 export PATH="/Applications/quarto/bin:$PATH"
 export EDITOR="zed -n --wait"
 
+# Haskell (ghcup)
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
+
 # =============================================================================
 # Terminal tab title - worktree対応
 # =============================================================================
@@ -43,6 +46,7 @@ add-zsh-hook chpwd _set_tab_title
 # Prompt
 # =============================================================================
 eval "$(starship init zsh)"
+eval "$(direnv hook zsh)"
 
 
 # Kiro CLI post block. Keep at the bottom of this file.
