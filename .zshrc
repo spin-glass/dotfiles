@@ -11,24 +11,6 @@ fi
 
 
 
-# Powerlevel10k instant prompt
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# =============================================================================
-# Oh My Zsh
-# =============================================================================
-ZSH_THEME="powerlevel10k/powerlevel10k"
-DISABLE_AUTO_TITLE="true"
-plugins=(
-  git
-  z
-  docker
-  brew
-)
-
-
 # =============================================================================
 # Tools
 # =============================================================================
@@ -39,8 +21,6 @@ export EDITOR="zed -n --wait"
 # =============================================================================
 # Terminal tab title - worktree対応
 # =============================================================================
-DISABLE_AUTO_TITLE="true"
-
 _set_tab_title() {
   local title
   if git rev-parse --is-inside-work-tree &>/dev/null; then
@@ -60,15 +40,10 @@ add-zsh-hook precmd _set_tab_title
 add-zsh-hook chpwd _set_tab_title
 
 # =============================================================================
-# Powerlevel10k config
+# Prompt
 # =============================================================================
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
-eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
-eval "$(starship init zsh)"
