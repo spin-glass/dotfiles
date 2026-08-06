@@ -1,9 +1,9 @@
 # CLI tools (configs in this repo assume these)
+# herdr is mise-managed — see mise/config.toml [tools]
 brew "mise"
 brew "starship"
 brew "direnv"
 brew "tmux"
-brew "herdr"
 
 # Apps
 cask "ghostty"

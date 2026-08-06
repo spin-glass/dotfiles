@@ -13,14 +13,18 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # 2. Clone and install
 git clone https://github.com/spin-glass/dotfiles.git ~/dotfiles
-brew bundle --file ~/dotfiles/Brewfile   # mise, starship, direnv, tmux, herdr, Ghostty, Zed
-cd ~/dotfiles && ./install.sh            # symlink all configs (backs up existing files)
-mise install                             # dev tools from mise/config.toml
+brew bundle --file ~/dotfiles/Brewfile   # mise, starship, direnv, tmux, Ghostty, Zed
+
+# 3. Bootstrap mise config, then let mise do the rest
+mkdir -p ~/.config/mise && ln -sf ~/dotfiles/mise/config.toml ~/.config/mise/config.toml
+mise trust ~/dotfiles/mise/config.toml
+mise run setup                           # symlink all configs (backs up existing), TPM
+mise install                             # dev tools incl. herdr from mise/config.toml
 exec zsh
 ```
 
-`install.sh` creates symlinks idempotently. Existing real files are backed up
-as `*.bak.<timestamp>` before linking.
+`mise run setup` creates symlinks idempotently. Existing real files are backed
+up as `*.bak.<timestamp>` before linking.
 
 ## Layout
 
