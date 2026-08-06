@@ -26,6 +26,9 @@ link .tmux.conf        "$HOME/.tmux.conf"
 link .gitconfig        "$HOME/.gitconfig"
 link zed/settings.json "$HOME/.config/zed/settings.json"
 
+# mise: symlink 先の設定ファイルを信頼登録（未登録だと mise install が失敗する）
+command -v mise >/dev/null 2>&1 && mise trust "$REPO/mise/config.toml" >/dev/null
+
 # tmux plugin manager (TPM) — .tmux.conf が参照
 [ -d "$HOME/.tmux/plugins/tpm" ] || git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
