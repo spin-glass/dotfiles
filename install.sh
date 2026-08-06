@@ -19,5 +19,14 @@ link() {
 
 link ghostty/config    "$HOME/.config/ghostty/config"
 link herdr/config.toml "$HOME/.config/herdr/config.toml"
+link mise/config.toml  "$HOME/.config/mise/config.toml"
+link .zshrc            "$HOME/.zshrc"
+link .zprofile         "$HOME/.zprofile"
+link .tmux.conf        "$HOME/.tmux.conf"
+link .gitconfig        "$HOME/.gitconfig"
+link zed/settings.json "$HOME/.config/zed/settings.json"
+
+# tmux plugin manager (TPM) — .tmux.conf が参照
+[ -d "$HOME/.tmux/plugins/tpm" ] || git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
 echo "完了。herdr 起動中なら反映: herdr server reload-config"

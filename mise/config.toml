@@ -1,0 +1,19 @@
+[settings]
+experimental = true
+disable_backends = ["asdf", "vfox"]
+
+[settings.pipx]
+uvx = true
+
+[tools]
+aws = "latest"
+terraform = "latest"
+github-cli = "latest"
+python = "3.14.0"
+uv = "latest"
+cmake = "latest"
+pnpm = "latest"
+node = "lts"
+git-lfs = "latest"
+ripgrep = "latest"
+task = "latest"
