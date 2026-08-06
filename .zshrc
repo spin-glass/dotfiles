@@ -64,8 +64,6 @@ add-zsh-hook chpwd _set_tab_title
 # =============================================================================
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export LINEAR_API_KEY="***REMOVED***"
-
 
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
