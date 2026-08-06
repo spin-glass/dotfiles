@@ -1,0 +1,21 @@
+# herdr config — 推奨初期値（v0.8系・公式docs記載のキーのみ）
+onboarding = false
+
+[ui.toast]
+# 通知は default OFF のため明示的に有効化
+delivery = "system"
+
+[ui.sound.agents]
+claude = "on"
+
+[session]
+resume_agents_on_restore = true
+
+# tmux と入れ子にする場合は prefix 変更を検討（default は ctrl+b）
+# [keys]
+# prefix = "ctrl+a"
+
+# 日本語IME向け（必要になったら有効化・experimental）
+# [experimental]
+# reveal_hidden_cursor_for_cjk_ime = true
+# cjk_ime_agents = ["claude", "codex"]
