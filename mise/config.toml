@@ -35,6 +35,7 @@ link .tmux.conf        "$HOME/.tmux.conf"
 link .gitconfig        "$HOME/.gitconfig"
 link zed/settings.json "$HOME/.config/zed/settings.json"
 link claude/statusline-ccusage.sh "$HOME/.claude/statusline-ccusage.sh"
+link claude/ccusage.json "$HOME/.claude/ccusage.json"
 
 # Claude Code statusline (ccusage) — settings.json に statusLine が無ければ追記。
 # settings.json は Claude Code 自身が書き換えるため symlink 管理せず、キー単位で冪等マージする

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ccusage.com/config-schema.json",
+  "defaults": {
+    "timezone": "Asia/Tokyo"
+  },
+  "commands": {
+    "statusline": {
+      "visualBurnRate": "emoji",
+      "contextLowThreshold": 50,
+      "contextMediumThreshold": 80
+    }
+  }
+}
