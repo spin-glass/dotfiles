@@ -36,6 +36,10 @@ up as `*.bak.<timestamp>` before linking.
 | `.zshrc` / `.zprofile` | `~/.zshrc` / `~/.zprofile` |
 | `.tmux.conf` / `.gitconfig` | `~/.tmux.conf` / `~/.gitconfig` |
 | `zed/settings.json` | `~/.config/zed/settings.json` |
+| `claude/statusline-ccusage.sh` | `~/.claude/statusline-ccusage.sh` |
+
+`~/.claude/settings.json` is not symlinked (Claude Code rewrites it); `mise run setup`
+merges the `statusLine` key into it only when absent.
 
 ## Policy
 
