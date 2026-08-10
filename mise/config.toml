@@ -52,8 +52,11 @@ pnpm = "latest"
 node = "lts"
 git-lfs = "latest"
 ripgrep = "latest"
+glow = "latest"
 task = "latest"
 # registry: aqua:herdrdev/herdr — 旧miseだと未収載エラー。対処: brew upgrade mise
 herdr = "latest"
 # registry: aqua:anthropics/claude-code。初回は claude login が必要
 claude = "latest"
+# Claude Code のローカル使用ログからコスト集計。statusline は ~/.claude/settings.json 参照
+"npm:ccusage" = "latest"

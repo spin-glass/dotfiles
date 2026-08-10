@@ -8,3 +8,4 @@ brew "tmux"
 # Apps
 cask "ghostty"
 cask "zed"
+cask "obsidian"
