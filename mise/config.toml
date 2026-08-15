@@ -70,6 +70,10 @@ PY
 
 # herdr プラグイン — herdr/config.toml のキーバインドが参照。
 # 新規マシンでは setup が mise install より先のため、herdr 未導入なら案内してスキップ
+# herdr プラグインは最小PATH（/opt/homebrew/bin 等）で子プロセスを起動するため、
+# mise 管理の herdr を shim と同じ方式（herdr 名で mise を呼ぶ symlink）で brew bin に公開する
+[ -e /opt/homebrew/bin/herdr ] || ln -s /opt/homebrew/bin/mise /opt/homebrew/bin/herdr
+
 if command -v herdr >/dev/null 2>&1; then
   herdr plugin list 2>/dev/null | grep -q "persiyanov.reviewr" || herdr plugin install persiyanov/herdr-reviewr --yes
   herdr plugin list 2>/dev/null | grep -q "rmarganti.herdr-pluck" || herdr plugin install rmarganti/herdr-pluck --yes
