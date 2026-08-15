@@ -68,6 +68,15 @@ PY
 # tmux plugin manager (TPM) — .tmux.conf が参照
 [ -d "$HOME/.tmux/plugins/tpm" ] || git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
+# herdr プラグイン — herdr/config.toml のキーバインドが参照。
+# 新規マシンでは setup が mise install より先のため、herdr 未導入なら案内してスキップ
+if command -v herdr >/dev/null 2>&1; then
+  herdr plugin list 2>/dev/null | grep -q "persiyanov.reviewr" || herdr plugin install persiyanov/herdr-reviewr --yes
+  herdr plugin list 2>/dev/null | grep -q "rmarganti.herdr-pluck" || herdr plugin install rmarganti/herdr-pluck --yes
+else
+  echo "herdr 未導入 — mise install 後にもう一度 mise run setup を実行するとプラグインが入ります"
+fi
+
 echo "完了。herdr 起動中なら反映: herdr server reload-config"
 '''
 

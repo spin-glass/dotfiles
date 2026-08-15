@@ -24,7 +24,9 @@ exec zsh
 ```
 
 `mise run setup` creates symlinks idempotently. Existing real files are backed
-up as `*.bak.<timestamp>` before linking.
+up as `*.bak.<timestamp>` before linking. It also installs herdr plugins
+(reviewr, pluck) when `herdr` is on PATH — rerun it once after `mise install`
+on a fresh machine.
 
 ## Layout
 
