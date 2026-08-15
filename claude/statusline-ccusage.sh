@@ -54,6 +54,38 @@ for m in data.get("monthly", []):
   [ -n "$cost" ] && printf '%s' "$cost" > "$CACHE"
 fi
 
+# モデル別週次枠(Fable等)は stdin に来ないため公式 usage API から取得。
+# トークンは Keychain からパイプ渡しのみ(ディスクに書かない)。2分キャッシュ、失敗時は空で静かに省略
+SCOPED_CACHE="$HOME/.cache/claude-scoped-limit"
+sage=999999
+[ -f "$SCOPED_CACHE" ] && sage=$(( now - $(stat -f %m "$SCOPED_CACHE") ))
+if [ "$sage" -gt 120 ]; then
+  security find-generic-password -s "Claude Code-credentials" -w 2>/dev/null | "$PYTHON" -c '
+import json, sys, urllib.request
+try:
+    tok = (json.load(sys.stdin).get("claudeAiOauth") or {}).get("accessToken")
+    req = urllib.request.Request("https://api.anthropic.com/api/oauth/usage",
+        headers={"Authorization": "Bearer " + tok, "anthropic-beta": "oauth-2025-04-20"})
+    with urllib.request.urlopen(req, timeout=10) as r:
+        d = json.load(r)
+    parts = []
+    for lim in d.get("limits") or []:
+        if lim.get("kind") != "weekly_scoped" or not lim.get("is_active"):
+            continue
+        scope = lim.get("scope") or {}
+        name = ((scope.get("model") or {}).get("display_name")
+                or scope.get("surface") or "scoped")
+        parts.append("%s週 %.0f%%" % (name, lim.get("percent") or 0))
+    print(" · ".join(parts))
+except Exception:
+    pass
+' > "$SCOPED_CACHE" 2>/dev/null
+fi
+SCOPED=$(cat "$SCOPED_CACHE" 2>/dev/null)
+if [ -n "$SCOPED" ]; then
+  [ -n "$RATE" ] && RATE="$RATE · $SCOPED" || RATE="$SCOPED"
+fi
+
 mcost=$(cat "$CACHE" 2>/dev/null)
 if [ -n "$mcost" ]; then
   # "X today" の直後に月次を挿入(行末は画面幅で切れるため)
