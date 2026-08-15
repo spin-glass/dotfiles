@@ -73,6 +73,8 @@ PY
 if command -v herdr >/dev/null 2>&1; then
   herdr plugin list 2>/dev/null | grep -q "persiyanov.reviewr" || herdr plugin install persiyanov/herdr-reviewr --yes
   herdr plugin list 2>/dev/null | grep -q "rmarganti.herdr-pluck" || herdr plugin install rmarganti/herdr-pluck --yes
+  # 通知は初回のみ システム設定 → 通知 → herdr で許可が必要
+  herdr plugin list 2>/dev/null | grep -q "dot.terminal-notifier" || herdr plugin install dot/herdr-terminal-notifier --yes
 else
   echo "herdr 未導入 — mise install 後にもう一度 mise run setup を実行するとプラグインが入ります"
 fi
