@@ -34,6 +34,9 @@ link .zprofile         "$HOME/.zprofile"
 link .tmux.conf        "$HOME/.tmux.conf"
 link .gitconfig        "$HOME/.gitconfig"
 link zed/settings.json "$HOME/.config/zed/settings.json"
+# VS Code は GUI で設定を変えると settings.json を書き戻すが、symlink は
+# 辿った先に書かれるので dotfiles 側が更新される(実体が置き換わることはない)
+link vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
 link claude/statusline-ccusage.sh "$HOME/.claude/statusline-ccusage.sh"
 link claude/ccusage.json "$HOME/.claude/ccusage.json"
 
