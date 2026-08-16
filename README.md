@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal dotfiles: Ghostty, herdr, zsh, tmux, git, Zed, Orca, Spec Kit, and mise-managed dev tools.
+Personal dotfiles: Ghostty, herdr, zsh, tmux, git, Zed, Orca, Kiro CLI, Spec Kit, and mise-managed dev tools.
 
 ## New machine setup
 
@@ -31,6 +31,15 @@ on a fresh machine.
 Orca ships from the non-official `stablyai/orca` tap, so the Brewfile grants
 Homebrew tap trust for that one cask (not the whole tap). `brew bundle` applies
 it — no separate `brew trust` step.
+
+## Kiro CLI
+
+`.zshrc` と `.zprofile` は Kiro CLI の pre/post ブロックを含むが、本体は brew
+でも mise でも管理していない（公式インストーラが `~/.local/bin/kiro-cli` に
+直接置く方式のため）。新規マシンでは https://kiro.dev から別途インストールする。
+
+未導入でもフック側が `[ -x ~/.local/bin/kiro-cli ]` で存在を確認するため、
+シェル起動は壊れない。コマンド名は `kiro` ではなく `kiro-cli`。
 
 ## Spec Kit
 
