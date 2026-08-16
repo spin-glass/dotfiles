@@ -49,5 +49,11 @@ eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/toshi/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
