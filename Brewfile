@@ -15,3 +15,10 @@ cask "obsidian"
 # 巻き込まないよう、tap 全体(trusted: true)ではなく orca cask だけを信頼する
 tap "stablyai/orca", trusted: { cask: "orca" }
 cask "stablyai/orca/orca"
+
+# Fonts
+# HackGen(白源) = Hack + 源柔ゴシック。日本語グリフ内蔵の等幅フォント。
+# macOS の優先言語が en-JP だと Chromium 系(VS Code / Chrome)が漢字を中国語字形で
+# 表示するため、日本語を持つフォントを明示指定して回避する。半角:全角 = 1:2 で
+# CJK 混在でも罫線と表組みが崩れず、Nerd Font 同梱で starship のアイコンも出る
+cask "font-hackgen-nerd"

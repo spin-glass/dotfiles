@@ -8,8 +8,10 @@
 theme = light:Ayu Light,dark:Ayu
 
 # -- Font ---------------------------------------------------------------------
-# Ghostty ships with JetBrains Mono + built-in Nerd Fonts by default
-# font-family = JetBrains Mono
+# HackGen(白源) = Hack + 源柔ゴシック。既定の JetBrains Mono は日本語を持たず、
+# macOS の優先言語が en-JP だとフォールバックで中国語字形が選ばれるため明示する。
+# 半角:全角 = 1:2 なので CJK 混在でも罫線と表組みが揃う。Nerd Font 同梱
+font-family = HackGen Console NF
 font-size = 12
 
 # -- Window -------------------------------------------------------------------
