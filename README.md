@@ -39,8 +39,10 @@ it — no separate `brew trust` step.
 
 ```sh
 cd <project>
-specify init --here --ai claude   # .specify/ と /speckit.* コマンドを配置
+specify init --here --integration claude   # .specify/ と .claude/skills/speckit-* を配置
 ```
+
+`--ai` は旧版のフラグ。0.16 系では `--integration` に変わっている。
 
 この dotfiles 自身は初期化していない（設定リポジトリで spec 駆動する必要がないため）。
 
