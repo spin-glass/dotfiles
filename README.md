@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal dotfiles: Ghostty, herdr, zsh, tmux, git, Zed, Orca, and mise-managed dev tools.
+Personal dotfiles: Ghostty, herdr, zsh, tmux, git, Zed, Orca, Spec Kit, and mise-managed dev tools.
 
 ## New machine setup
 
@@ -31,6 +31,18 @@ on a fresh machine.
 Orca ships from the non-official `stablyai/orca` tap, so the Brewfile grants
 Homebrew tap trust for that one cask (not the whole tap). `brew bundle` applies
 it — no separate `brew trust` step.
+
+## Spec Kit
+
+`specify` (GitHub Spec Kit) は mise 管理なので `mise install` で入る。利用は
+プロジェクト単位で初期化が要る:
+
+```sh
+cd <project>
+specify init --here --ai claude   # .specify/ と /speckit.* コマンドを配置
+```
+
+この dotfiles 自身は初期化していない（設定リポジトリで spec 駆動する必要がないため）。
 
 ## Layout
 

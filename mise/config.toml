@@ -105,3 +105,6 @@ herdr = "latest"
 claude = "latest"
 # Claude Code のローカル使用ログからコスト集計。statusline は ~/.claude/settings.json 参照
 "npm:ccusage" = "latest"
+# GitHub Spec Kit (spec 駆動開発)。README の `uv tool install --from git+…` ではなく
+# PyPI 版を使う: git 版はパッケージ版数が 0.0.22 のまま更新されず、mise が版管理できない
+"pipx:specify-cli" = "latest"
