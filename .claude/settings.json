@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(brew list *)",
+      "Bash(brew info *)",
+      "Bash(brew search *)",
+      "Bash(brew bundle check *)",
+      "Bash(brew tap)",
+      "Bash(herdr plugin list *)",
+      "Bash(defaults read *)",
+      "Bash(mise ls *)",
+      "Bash(mise registry *)",
+      "Bash(mise which *)",
+      "Bash(mise tasks *)",
+      "Bash(system_profiler *)",
+      "Bash(ghostty +list-fonts *)",
+      "Bash(ghostty +validate-config *)",
+      "mcp__claude_ai_Notion__notion-search",
+      "mcp__claude_ai_Notion__notion-fetch",
+      "mcp__miro__board_list_items"
+    ]
+  }
+}
