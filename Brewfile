@@ -10,6 +10,11 @@ cask "ghostty"
 cask "zed"
 cask "obsidian"
 
+# Coding agents
+# OpenAI Codex CLI。GUI ではなく端末用エージェントだが Homebrew では cask 配布。
+# /opt/homebrew/bin/codex にリンクされる
+cask "codex"
+
 # Orca (ADE) — 素の `orca` cask は無関係な plotly ツール(deprecated)なので tap 修飾必須。
 # 非公式 tap は Homebrew 6.0 の tap trust で明示信頼が要る。将来追加される cask まで
 # 巻き込まないよう、tap 全体(trusted: true)ではなく orca cask だけを信頼する
